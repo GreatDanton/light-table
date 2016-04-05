@@ -53,6 +53,10 @@ body {
   border-bottom: 2px solid #2795ee;
 }
 
+.active {
+  border-bottom: 2px solid #2795ee !important;
+}
+
 .board {
   display: inline-flex;
   flex-flow: column;

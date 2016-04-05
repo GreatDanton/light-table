@@ -37,6 +37,12 @@ $('document').ready(function() {
 $('.navigation > ul > li').click(function() {
   var grid = $(this).text();
   $('.text-area').val('');
+  $('.navigation > ul > li').each(function() {
+    $(this).removeClass('active');
+  });
+  $(this).addClass('active');
+
+
   $('.drawingBoard').html('');
   if (grid[0] == '4') {
     drawBoard('four-drawBoard',4,'.drawingBoard');
@@ -112,7 +118,8 @@ var move1 = [['a1', 'a4', 'd1', 'd4'], ['a1', 'a4', 'd1', 'd4', 'b2', 'c3'],
 ['b2', 'b3', 'c2', 'c3', 'b1', 'c1', 'b4', 'c4'],
 ['b1', 'c1', 'b4', 'c4', 'a1', 'a2', 'a3', 'a4', 'd1', 'd2', 'd3', 'd4'],
 ['b1', 'b2', 'c3', 'c4', 'a1', 'a2','d3', 'd4'],
-['b3', 'b4', 'a3', 'a4', 'd1', 'd2', 'c1', 'c2'], ['a3','a4','b4','c1','d1','d2'], ['a3','a4','b1','b4','c1','c4','d1','d2'],
+['b3', 'b4', 'a3', 'a4', 'd1', 'd2', 'c1', 'c2'],
+['a3','a4','b4','c1','d1','d2'], ['a3','a4','b1','b4','c1','c4','d1','d2'],
 ['a1','a4','b1','b4','c1','c4','d1','d4'],
 ['a1','a2','b1','b4','c1','c4','d3','d4'],
 ['a1','a2','a3','b1','c4','d2','d3','d4'],
