@@ -183,7 +183,5 @@ function move1Animation(board, move1) {
 move1Animation('fourLeds', move1);
 move1Animation('drawBoard', move1);
 move1Animation('fiveLeds', move5grid);
-//move1Animation('tenLeds');
-
 
 });
