@@ -12,6 +12,45 @@ h1, h2, h3, h4, h5, p {
 
 body {
   font-family: 'Lato', sans-serif;
+  color: #333;
+}
+
+.main-title {
+  padding: 40px 80px;
+  border-bottom: 1px solid #eee;
+}
+
+.centered {
+  text-align: center;
+  justify-content: center;
+}
+
+.navigation {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  line-height: 38px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.navigation ul {
+  margin-left: 40px;
+  display: inline-flex;
+  list-style-type: none;
+}
+
+.navigation ul li {
+  text-decoration: none;
+  padding: 0 20px;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.navigation ul li:hover {
+  border-bottom: 2px solid #2795ee;
 }
 
 .board {
@@ -46,9 +85,14 @@ body {
   padding: 20px;
 }
 
+.drawingBoard-container {
+  display: flex;
+}
+
 textarea {
   min-width: 400px;
   min-height: 200px;
+  margin: 10px;
   resize: none;
 }
 

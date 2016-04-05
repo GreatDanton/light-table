@@ -9,19 +9,35 @@
 </head>
 
 <body>
-<h1> Light table </h1>
+<h1 class="main-title"> Light table editor</h1>
+
+<div class="navigation">
+  <h2> Grid: </h2>
+  <ul>
+    <li>4 × 4</li>
+    <li>5 × 5</li>
+    <li>6 × 6</li>
+    <li>10 × 10</li>
+  </ul>
+</div>
+
 <div class="container">
 
-  <div class="tenLed row">
+<div class="drawingBoard-container">
+  <div class="drawingBoard">
+  </div>
+
+  <div class="tenLeds row">
     <div class="controls">
       <textarea class="text-area"></textarea>
-      <div class="row reverse">
-        <button id="ten-clear" class="blue"> Clear </button>
-        <button id="ten-save" class="blue"> Save </button>
-        <button id="ten-load" class="blue"> Load </button>
+      <div class="row centered">
+        <button id="btn-clear" class="blue"> Clear </button>
+        <button id="btn-save" class="blue"> Save </button>
+        <button id="btn-load" class="blue"> Load </button>
       </div>
     </div>
   </div>
+</div>
 
 </div>
 
