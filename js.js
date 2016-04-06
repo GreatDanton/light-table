@@ -22,6 +22,21 @@ $('document').ready(function() {
     // create table
   }
 
+  $('#openExplanation').click(function() {
+    $('.modal').fadeIn(300);
+    $('.overlay').fadeIn(300);
+  });
+
+  $('.closeModal').click(function() {
+    $('.modal').fadeOut(300);
+    $('.overlay').fadeOut(300);
+  });
+
+  $('.overlay').click(function() {
+    $('.overlay').fadeOut(300);
+    $('.modal').fadeOut(300);
+  });
+
 
 // draw all boards
   drawBoard('ten-drawBoard',10, '.drawingBoard');

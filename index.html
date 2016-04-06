@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<h1 class="main-title"> Light table editor</h1>
+<h1 class="main-title"> Light table editor <span id="openExplanation" class="circle">?</span></h1>
 
 <div class="navigation">
   <h2> Grid: </h2>
@@ -38,8 +38,26 @@
     </div>
   </div>
 </div>
-
 </div>
+
+<div id="explanation" class="modal">
+  <h2> What is this? </h2>
+  <hr><br/>
+  <p> Light table editor is an useful tool for creating animations on the
+  chosen grid. Pick desired grid, paint your part of the animation and
+click on the save button. In text box on the right you will get the
+coordinates of divs which should be on in desired animation step. </p>
+<br/>
+
+<p> You can also load animation step with pasting the coordinates into
+  text box on the right, and clicking the load button. </p>
+<br/>
+<p> Below the drawing grid you can see the animations created with light table
+  editor. </p>
+</table>
+  <button class="closeModal"> Close </button>
+</div>
+<div class="overlay"></div>
 
 </body>
 
