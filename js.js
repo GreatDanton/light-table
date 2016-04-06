@@ -37,6 +37,13 @@ $('document').ready(function() {
     $('.modal').fadeOut(300);
   });
 
+  $('#btn-fullscreen').click(function() {
+    $('#fullscreen').fadeIn(300);
+    drawBoard('boardFull',5,'#fullscreen');
+    move1Animation('boardFull', move5grid);
+    console.log('clicked');
+  });
+
 
 // draw all boards
   drawBoard('ten-drawBoard',10, '.drawingBoard');
@@ -108,19 +115,15 @@ $('#btn-load').click(function() {
 
 
 // draw on mouse hold function
-var mouseBtnDown = false;
 $(document).mousedown(function() {
-  mouseBtnDown = true;
-
-  $('.square').mouseover(function() {
-    var sqID = $(this).attr('id');
-    if (mouseBtnDown) {
-      $('#' + sqID).toggleClass('light');
-    }
+  $('.square').bind('mouseover', function() {
+    $(this).toggleClass('light');
   });
-}).mouseup(function() {
-  mouseBtnDown = false;
+})
+.mouseup(function() {
+  $('.square').unbind('mouseover');
 });
+
 
 $('.square').mousedown(function() {
   $(this).toggleClass('light');
@@ -175,9 +178,34 @@ var move5grid = [['a1','a2','a4','a5','b2','b3','b4','c3','d2','d3','d4','e1','e
 ['a2','a4','b1','b2','b3','b4','b5','c2','c3','c4','d1','d2','d3','d4','d5','e2','e4'],
 ['a1','a3','a5','b3','c1','c2','c4','c5','d3','e1','e3','e5'],
 ['a1','a5','c3','e1','e5'],
-['a1','a5','b2','b4','c3','d3','e3'],
-['a3','b3','c3','d2','d4','e1','e5'],
-['a1','a3','a5','b2','b3','b4','c3','d2','d3','d4','e1','e3','e5']
+];
+
+var move6grid =  [['a1','a6','b2','b5','c3','c4','d3','d4','e2','e5','f1','f6'],
+['a2','a3','a4','a5','b1','b3','b4','b6','c1','c2','c5','c6','d1','d2','d5','d6','e1','e3','e4','e6','f2','f3','f4','f5'],
+['a2','a3','a4','a5','b1','b6','c1','c3','c6','d1','d4','d6','e1','e6','f2','f3','f4','f5'],
+['a2','a3','a4','a5','b1','b6','c1','c4','c6','d1','d3','d6','e1','e6','f2','f3','f4','f5'],
+['a1','a3','a4','a5','a6','b1','c1','c6','d1','d6','e6','f1','f2','f3','f4','f6'],
+['a1','a2','a4','a5','a6','b1','b6','c1','d6','e1','e6','f1','f2','f3','f5','f6'],
+['a1','a2','a5','a6','b1','b2','b5','b6','e1','e2','e5','e6','f1','f2','f5','f6'],
+['b2','b3','b5','b6','c2','c3','c5','c6','e2','e3','e5','e6','f2','f3','f5','f6'],
+['b1','b2','b4','b5','c1','c2','c4','c5','e1','e2','e4','e5','f1','f2','f4','f5'],
+['a1','a2','a4','a5','b1','b2','b4','b5','d1','d2','d4','d5','e1','e2','e4','e5'],
+['a2','a3','a5','a6','b2','b3','b5','b6','d2','d3','d5','d6','e2','e3','e5','e6'],
+['a1','a3','a4','a6','c1','c3','c4','c6','d1','d3','d4','d6','f1','f3','f4','f6'],
+['a2','a3','a4','a5','b2','b3','b4','b5','e2','e3','e4','e5','f2','f3','f4','f5'],
+['c2','c3','c4','c5','d2','d3','d4','d5'],
+['b3','b4','c2','c3','c4','c5','d2','d3','d4','d5','e3','e4'],
+['a4','a5','a6','b2','b3','b6','c2','c6','d1','d6','e1','e6','f1','f2','f3','f4','f5','f6'],
+['a5','a6','b2','b3','b4','b6','c2','c6','d1','d6','e1','e6','f1','f2','f3','f4','f5','f6'],
+['b2','b3','b4','b5','b6','c2','c6','d1','d6','e1','e6','f1','f2','f3','f4','f5','f6'],
+['b2','b3','b4','b5','c2','c5','d1','d6','e1','e6','f1','f2','f3','f4','f5','f6'],
+['b2','b3','b4','b5','c2','c5','d1','d5','e1','e6','f1','f2','f3','f4','f5','f6'],
+['b2','b3','b4','b5','c2','c5','d1','d5','e1','e5','f1','f2','f3','f4','f5'],
+['b2','b3','b4','b5','c2','c5','d1','d5','e1','e4','e5','f1','f2','f3'],
+['b2','b3','b4','b5','c2','c5','d1','d5','e1','e3','e4','e5','f1','f2'],
+['b2','b3','b4','b5','c2','c5','d1','d5','e1','e2','e3','e4','e5'],
+['b2','b3','b4','b5','c2','c5','d2','d5','e2','e3','e4','e5'],
+['a1','a6','b3','b4','c2','c5','d2','d5','e3','e4','f1','f6']
 ];
 
 // ######### ANIMATION FUNCTION ##########
@@ -203,7 +231,7 @@ function move1Animation(board, move1) {
 }
 
 move1Animation('fourLeds', move1);
-move1Animation('drawBoard', move1);
+move1Animation('drawBoard', move6grid);
 move1Animation('fiveLeds', move5grid);
 
 });
