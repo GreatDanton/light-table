@@ -23,18 +23,21 @@ $('document').ready(function() {
   }
 
   $('#openExplanation').click(function() {
-    $('.modal').fadeIn(300);
+    $('.modal').addClass('slide-down');
+    $('.modal').removeClass('slide-up');
     $('.overlay').fadeIn(300);
   });
 
   $('.closeModal').click(function() {
-    $('.modal').fadeOut(300);
+    $('.modal').removeClass('slide-down');
+    $('.modal').addClass('slide-up');
     $('.overlay').fadeOut(300);
   });
 
   $('.overlay').click(function() {
     $('.overlay').fadeOut(300);
-    $('.modal').fadeOut(300);
+    $('.modal').removeClass('slide-down');
+    $('.modal').addClass('slide-up');
   });
 
   $('#btn-fullscreen').click(function() {
