@@ -96,9 +96,14 @@ $('#btn-save').click(function() {
   var arr = [];
   $('.drawingBoard .light').each(function() {
     var squareID = $(this).attr('id');
-    squareID = squareID.slice(squareID.length - 2);
+    if (squareID.indexOf(10) > -1) {
+      squareID = squareID.slice(squareID.length - 3);
+    } else {
+      squareID = squareID.slice(squareID.length - 2);
+    }
     arr.push("'" + squareID + "'");
   });
+  console.log(arr);
   $('.text-area').val('[' + arr + ']');
 });
 
